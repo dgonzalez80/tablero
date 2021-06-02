@@ -1,0 +1,84 @@
+---
+title: "Iris"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+data(iris)
+attach(iris)
+
+c1="#002147" # ****
+c2="#325d8c" # ***
+c3="#6994bc" # **
+c4="#95b9db" # **
+c5="#c4d5f2"
+c6="#C8C8C8" # ***
+c7="#8A8D8F"
+paleta2=c(c1,c2)
+paleta3=c(c1,c2,c4)
+
+```
+# Pagina 1
+=========================================================================
+
+Column {data-width=200}
+-----------------------------------------------------------------------
+
+### Comparación de largo de sepalos
+
+```{r}
+boxplot(Sepal.Length~Species, col=paleta3)
+```
+
+
+### Comparación largo de petalos
+
+```{r}
+boxplot(Petal.Length~Species, col=paleta3)
+```
+
+
+
+Column {data-width=200}
+-----------------------------------------------------------------------
+
+### Comparación de ancho de sepalos
+
+```{r}
+boxplot(Sepal.Width~Species, col=paleta3)
+```
+
+### Comparación de ancho de petalos
+
+```{r}
+boxplot(Petal.Width~Species, col=paleta3)
+```
+
+Column {data-width=200}
+-----------------------------------------------------------------------
+`
+```{r}
+DT::datatable(head(iris,150),fillContainer = FALSE, options = list(pageLength = 16))
+```
+
+# Pagina 2
+=====================================================================
+
+
+Column {data-width=1000}
+-----------------------------------------------------------------------
+
+### **Ejemplo 1** 
+
+https://beta.rstudioconnect.com/jjallaire/htmlwidgets-highcharter/htmlwidgets-highcharter.html#sales-by-category
+
+
+### **Ejemplo 2**
+
+https://rpubs.com/data-studio/ITALY
+
+
