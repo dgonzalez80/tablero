@@ -73,6 +73,9 @@ Column {data-width=1000}
 -----------------------------------------------------------------------
 
 ### **Ejemplo 1** 
+```{r}
+hist(iris$Sepal.Length)
+```
 
 https://beta.rstudioconnect.com/jjallaire/htmlwidgets-highcharter/htmlwidgets-highcharter.html#sales-by-category
 
