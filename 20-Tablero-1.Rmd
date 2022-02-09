@@ -1,0 +1,71 @@
+---
+title: "COVID-19 EN COLOMBIA 2020-2021"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+
+c1="#002147" # ****
+c2="#325d8c" # ***
+c3="#6994bc" # **
+c4="#95b9db" # **
+c5="#c4d5f2"
+c6="#C8C8C8" # ***
+c7="#8A8D8F"
+paleta2=c(c1,c2)
+paleta3=c(c1,c2,c4)
+
+library(tidyverse)   # libreria de librerias util en el manejo de datos
+library(dygraphs)
+library(xts)
+library(incidence)
+library(aTSA)
+library(lmtest)
+library(forecast)
+library(dplyr)
+library(seastests)
+library(trend)
+library(xtable)
+library(graphics)
+
+Colombia<- readRDS("data/Colombia.RDS")
+Colombia<- readRDS("data/Colombia20.RDS")
+Colombia<- readRDS("data/Colombia21.RDS")
+Colombia<- readRDS("data/Colombia22.RDS")
+Valle<-readRDS("data/Valle.RDS")
+Cali<-readRDS("data/Cali.RDS")
+
+
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+tabla1=table(Colombia$departamento_nom, Colombia$sexo)
+tabla1
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
+```
+
+
+
